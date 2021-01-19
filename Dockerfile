@@ -1,9 +1,0 @@
-FROM openjdk:8-jdk
-
-WORKDIR /App/data
-
-ARG JAR_FILE
-ENV JAR_FILE=${JAR_FILE}
-ADD ${JAR_FILE} /App/${JAR_FILE}
-
-ENTRYPOINT exec java $JAVA_OPTS -jar /App/${JAR_FILE}
